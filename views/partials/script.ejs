@@ -1,0 +1,11 @@
+<% if (foottag.external_script.length > 0) { %>
+    <% for(var i=0; i < foottag.external_script.length; i++) { %>
+        <script src="<%= foottag.external_script[i].link %>"></script>
+    <% } %>
+<% } %>
+
+<% if (foottag.internal_script.length > 0) { %>
+    <% for(var i=0; i < foottag.internal_script.length; i++) { %>
+        <script src="<%= foottag.internal_script[i].link %>"></script>
+    <% } %>
+<% } %>

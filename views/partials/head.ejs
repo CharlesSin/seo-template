@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= typeof headtag.title !='undefined' ? headtag.title : 'Title' %>
+    </title>
+    <meta name="title" content="<%= typeof headtag.title !='undefined' ? headtag.title : 'Title' %>">
+    <meta name="description"
+        content="<%= typeof headtag.meta.description !='undefined' ? headtag.meta.description : 'Description' %>">
+    <meta name="keywords"
+        content="<%= typeof headtag.meta.keywords !='undefined' ? headtag.meta.keywords : 'Keywords' %>">
+    <meta property="og:title" content="<%= typeof headtag.title !='undefined' ? headtag.title : 'Title' %>">
+    <meta property="og:description"
+        content="<%= typeof headtag.meta.description !='undefined' ? headtag.meta.description : 'Description' %>">
+    <meta property="og:keywords"
+        content="<%= typeof headtag.meta.keywords !='undefined' ? headtag.meta.keywords : 'Keywords' %>">
+    <meta property="og:image" content="<%= typeof headtag.meta.image !='undefined' ? headtag.meta.image : 'Image' %>">
+    <meta property="og:url" content="<%= typeof headtag.meta.url !='undefined' ? headtag.meta.url : 'Urls' %>">
+
+    <% if (headtag.external_css.length > 0) { %>
+        <% for(var i=0; i < headtag.external_css.length; i++) { %>
+            <link rel="stylesheet" href="<%= headtag.external_css[i].link %>"></link>
+        <% } %>
+    <% } %>
+
+    <% if (headtag.internal_css.length > 0) { %>
+        <% for(var i=0; i < headtag.internal_css.length; i++) { %>
+            <link rel="stylesheet" href="<%= headtag.internal_css[i].link %>"></link>
+        <% } %>
+    <% } %>
+</head>
